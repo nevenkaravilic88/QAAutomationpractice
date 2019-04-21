@@ -102,9 +102,6 @@ namespace AutomationPractice.Steps
             Assert.True(ut.TextPresentInElement(fullName).Displayed, "User's full mane is not displayed");
         }
 
-            
-       
     }
-
 
 }

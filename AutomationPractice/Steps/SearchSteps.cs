@@ -6,7 +6,7 @@ namespace AutomationPractice.Steps
     [Binding]
     public class SearchSteps
     {
-        [Given(@"user enters a DRESS search term")]
+        [StepDefinition(@"user enters a DRESS search term")]
         public void GivenUserEntersADRESSSearchTerm()
         {
             ScenarioContext.Current.Pending();
@@ -41,5 +41,19 @@ namespace AutomationPractice.Steps
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Given(@"user enters a '(.*)' search term")]
+        public void GivenUserEntersASearchTerm(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+       
+        [Then(@"results for a '(.*)' term are displayed")]
+        public void ThenResultsForATermAreDisplayed(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
