@@ -4,8 +4,10 @@
 	I want to be told the sum of two numbers
 
 @mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: User can search for a product and add it to the cart
+    Given user enters a DRESS search term
+    And user submits the search
+    And opens first product from the list
+    When user clicks on add to cart button
+    And user proceeds to checkout
+    Then cart page is opened

@@ -43,18 +43,13 @@ namespace AutomationPractice.Helpers
             return string.Format("email{0}@nevenka.ravilic.com", RandomName.Next(100000, 1000000));
         }
 
-       public void EnterTextElement(By search)
+     public void DropdownSelect(By select, string option)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(search)).Click();
-
-        }
-
-        public void ClickOnElement(object cartbtn)
-        {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(search)).Click();
-
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(select));
+            var dropdown = driver.FindElement(select);
+            var selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText(option);
         }
     }
 }

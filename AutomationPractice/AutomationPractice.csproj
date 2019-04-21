@@ -63,7 +63,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyAccount.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.feature</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Base.cs" />
+    <Compile Include="Helpers\SelectElement.cs" />
     <Compile Include="Helpers\TestConstants.cs" />
     <Compile Include="Helpers\Utilities.cs" />
     <Compile Include="Pages\AuthenticationPage.cs" />
@@ -71,9 +77,9 @@
     <Compile Include="Pages\Homepage.cs" />
     <Compile Include="Pages\Myaccount.cs" />
     <Compile Include="Pages\MyWishlistpage.cs" />
-    <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\MyAccountSteps.cs" />
+    <Compile Include="Steps\SearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -82,6 +88,10 @@
     <None Include="Features\MyAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MyAccount.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Search.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

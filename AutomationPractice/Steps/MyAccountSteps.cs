@@ -70,7 +70,26 @@ namespace AutomationPractice.Steps
         [Given(@"user enters all required personal details")]
         public void GivenUserEntersAllRequiredPersonalDetails()
         {
-            ScenarioContext.Current.Pending();
+            CreateAnAccountPage cap = new CreateAnAccountPage(Driver);
+            ut.EnterTextElement(cap.adFirstName, TestConstants.Firstname);
+            ut.EnterTextElement(cap.adLastName, TestConstants.Lastname);
+            string fullname = TestConstants.Firstname + " " + TestConstants.Lastname;
+            ScenarioContext.Current.Add(TestConstants.FullName, fullname);
+            ut.EnterTextElement(cap.password, TestConstants.Password);
+            ut.EnterTextElement(cap.adFirstName, TestConstants.Firstname);
+            ut.EnterTextElement(cap.adFirstName, TestConstants.Lastname);
+            ut.EnterTextElement(cap.adLastName, TestConstants.Lastname);
+            ut.EnterTextElement(cap.address, TestConstants.Adress);
+            ut.EnterTextElement(cap.city, TestConstants.City);
+            ut.DropdownSelect(cap.state, TestConstants.State);
+            ut.EnterTextElement(cap.zipCode, TestConstants.ZipCode);
+            ut.EnterTextElement(cap.state, TestConstants.State);
+            ut.EnterTextElement(cap.phone, TestConstants.Mobile);
+            ut.EnterTextElement(cap.alias, TestConstants.Alias);
+            
+
+     
+
         }
 
         [When(@"submits the sign up form")]
@@ -85,51 +104,8 @@ namespace AutomationPractice.Steps
             ScenarioContext.Current.Pending();
         }
 
-        [Given(@"user enters a DRESS search term")]
-        public void GivenUserEntersADRESSSearchTerm()
-        {
-            SearchPage sp = new SearchPage(Driver);
-            ut.EnterTextElement(sp.search);
-        }
-
-        [Given(@"user submits the search")]
-        public void GivenUserSubmitsTheSearch()
-        {
-            SearchPage sp = new SearchPage(Driver);
-            ut.ClickOnElement(sp.search);
-        }
-
-        [Given(@"opens first product from the list")]
-        public void GivenOpensFirstProductFromTheList()
-        {
-            SearchPage sp = new SearchPage(Driver);
-            Assert.True(ut.ElementDisplayed(sp.search), "User can not open the product");
-
-        }
-
-        [When(@"user clicks on add to cart button")]
-        public void WhenUserClicksOnAddToCartButton()
-        {
-
-            SearchPage sp = new SearchPage(Driver);
-            ut.ClickOnElement(sp.search);
-        }
-
-        [When(@"user proceeds to checkout")]
-        public void WhenUserProceedsToCheckout()
-        {
-            SearchPage sp = new SearchPage(Driver);
-            ut.ClickOnElement(sp.search);
-        }
-
-        [Then(@"cart page is opened")]
-        public void ThenCartPageIsOpened()
-        {
-            SearchPage sp = new SearchPage(Driver);
-            Assert.True(ut.ElementDisplayed(sp.search), "User can not open the station");
-
-        }
-
+            
+       
     }
 
 
