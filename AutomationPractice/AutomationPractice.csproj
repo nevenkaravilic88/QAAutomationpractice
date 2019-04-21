@@ -55,6 +55,10 @@
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
@@ -69,7 +73,6 @@
       <DependentUpon>Search.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Base.cs" />
-    <Compile Include="Helpers\SelectElement.cs" />
     <Compile Include="Helpers\TestConstants.cs" />
     <Compile Include="Helpers\Utilities.cs" />
     <Compile Include="Pages\AuthenticationPage.cs" />

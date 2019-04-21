@@ -71,37 +71,35 @@ namespace AutomationPractice.Steps
         public void GivenUserEntersAllRequiredPersonalDetails()
         {
             CreateAnAccountPage cap = new CreateAnAccountPage(Driver);
-            ut.EnterTextElement(cap.adFirstName, TestConstants.Firstname);
-            ut.EnterTextElement(cap.adLastName, TestConstants.Lastname);
+            ut.EnterTextElement(cap.firstname, TestConstants.Firstname);
+            ut.EnterTextElement(cap.lastname, TestConstants.Lastname);
             string fullname = TestConstants.Firstname + " " + TestConstants.Lastname;
             ScenarioContext.Current.Add(TestConstants.FullName, fullname);
             ut.EnterTextElement(cap.password, TestConstants.Password);
             ut.EnterTextElement(cap.adFirstName, TestConstants.Firstname);
-            ut.EnterTextElement(cap.adFirstName, TestConstants.Lastname);
             ut.EnterTextElement(cap.adLastName, TestConstants.Lastname);
             ut.EnterTextElement(cap.address, TestConstants.Adress);
             ut.EnterTextElement(cap.city, TestConstants.City);
             ut.DropdownSelect(cap.state, TestConstants.State);
             ut.EnterTextElement(cap.zipCode, TestConstants.ZipCode);
-            ut.EnterTextElement(cap.state, TestConstants.State);
             ut.EnterTextElement(cap.phone, TestConstants.Mobile);
             ut.EnterTextElement(cap.alias, TestConstants.Alias);
-            
-
-     
 
         }
 
         [When(@"submits the sign up form")]
         public void WhenSubmitsTheSignUpForm()
         {
-            ScenarioContext.Current.Pending();
+            CreateAnAccountPage cap = new CreateAnAccountPage(Driver);
+            ut.ClickOnElement(cap.RegisterBtn);
         }
 
+                
         [Then(@"user's full name is displayed")]
         public void ThenUserSFullNameIsDisplayed()
         {
-            ScenarioContext.Current.Pending();
+            string fullName = ScenarioContext.Current.Get<string>(TestConstants.FullName);
+            Assert.True(ut.TextPresentInElement(fullName).Displayed, "User's full mane is not displayed");
         }
 
             
