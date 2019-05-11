@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AutomationPractice.Helpers;
+using System;
 using TechTalk.SpecFlow;
 
 namespace AutomationPractice.Steps
 {
     [Binding]
-    public class SearchSteps
+    public class SearchSteps  : Base
     {
         [StepDefinition(@"user enters a DRESS search term")]
         public void GivenUserEntersADRESSSearchTerm()
@@ -43,9 +44,11 @@ namespace AutomationPractice.Steps
         }
 
         [Given(@"user enters a '(.*)' search term")]
-        public void GivenUserEntersASearchTerm(string p0)
+        public void GivenUserEntersASearchTerm(string term)
         {
-            ScenarioContext.Current.Pending();
+            Utilities ut = new Utilities(Driver);
+            //HomePage hp = new HomePage(Driver);
+          //  ut.EnterTextElement(hp.searchFld, term);
         }
 
        
