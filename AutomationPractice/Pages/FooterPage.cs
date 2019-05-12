@@ -35,5 +35,13 @@ namespace AutomationPractice.Pages
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(InformationLink)).Displayed;
 
         }
+         public bool MyaccountPageElementDisplayed(string page)
+
+        {
+            By MyaccountLink = By.XPath("//*[@class='navigation_page'][contains(text(),'" + page + "')]");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(MyaccountLink)).Displayed;
+
+        }
     }
 }

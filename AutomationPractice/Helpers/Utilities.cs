@@ -12,7 +12,7 @@ namespace AutomationPractice.Helpers
     {
         readonly IWebDriver driver;
         private static readonly Random RandomName = new Random();
-        private By search;
+      //  private By search;
 
         public Utilities(IWebDriver driver)
         {

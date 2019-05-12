@@ -1,5 +1,6 @@
 ﻿using AutomationPractice.Helpers;
 using AutomationPractice.Pages;
+using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
 
@@ -18,9 +19,26 @@ namespace AutomationPractice.Steps
         }
         
         [Then(@"'(.*)' is displayed")]
-        public void ThenIsDisplayed(string p0)
+        public void ThenIsDisplayed(string page)
+        {
+
+         
+            Assert.True(fp.InformationPageDisplayed(page), "Coreect page is not displayed");
+
+        }
+
+        [When(@"user clicks on '(.*)' option under Myaccount section")]
+        public void WhenUserClicksOnOptionUnderMyaccountSection(string p0)
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Then(@"correct '(.*)'under Myaccount is displayed")]
+        public void ThenCorrectUnderMyaccountIsDisplayed(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
+
 }
