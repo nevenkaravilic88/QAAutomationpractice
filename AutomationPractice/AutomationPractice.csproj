@@ -61,6 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\ContactUs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactUs.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Footer.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,19 +85,27 @@
     <Compile Include="Helpers\TestConstants.cs" />
     <Compile Include="Helpers\Utilities.cs" />
     <Compile Include="Pages\AuthenticationPage.cs" />
+    <Compile Include="Pages\ContactUpPage.cs" />
     <Compile Include="Pages\CreateAnAccountPage.cs" />
     <Compile Include="Pages\FooterPage.cs" />
     <Compile Include="Pages\Homepage.cs" />
     <Compile Include="Pages\Myaccount.cs" />
     <Compile Include="Pages\MyWishlistpage.cs" />
+    <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\ContactUsSteps.cs" />
     <Compile Include="Steps\FooterSteps.cs" />
+    <Compile Include="Steps\HomePage.cs" />
     <Compile Include="Steps\MyAccountSteps.cs" />
     <Compile Include="Steps\SearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\ContactUs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ContactUs.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Footer.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

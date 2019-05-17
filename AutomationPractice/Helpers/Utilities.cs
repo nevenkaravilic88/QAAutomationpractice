@@ -26,6 +26,11 @@ namespace AutomationPractice.Helpers
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(selector)).Click();
         }
 
+        internal void ClickOnElement(object searchBtn)
+        {
+            throw new NotImplementedException();
+        }
+
         public void EnterTextElement(By selector, string text)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
@@ -52,6 +57,11 @@ namespace AutomationPractice.Helpers
             selectElement.SelectByText(option);
         }
 
+        internal void EnterTextElement(object searchFld, string term)
+        {
+            throw new NotImplementedException();
+        }
+
         public IWebElement TextPresentInElement(string text)
 
         {
@@ -65,6 +75,12 @@ namespace AutomationPractice.Helpers
         {
             return driver.FindElement(selector).GetAttribute("textContent");
     
+        }
+
+        public IList<IWebElement> ReturnCategoryList(string catName)
+        {
+            IList<IWebElement> category = driver.FindElements(By.CssSelector(".sf-menu [title='" + catName + "']"));
+            return category;
         }
     }
 }

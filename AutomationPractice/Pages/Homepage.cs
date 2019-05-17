@@ -13,7 +13,10 @@ namespace AutomationPractice.Pages
         readonly IWebDriver driver;
 
         public By signIn = By.ClassName("login");
-       
+        public By searchFld = By.Id("search_query_top");
+        public By searchBtn = By.ClassName("button-search");
+        public By dresses = By.CssSelector(".sf-menu [title='Dresses']");
+        public By contactUs = By.Id("contact-link");
 
         public Homepage(IWebDriver driver)
         {

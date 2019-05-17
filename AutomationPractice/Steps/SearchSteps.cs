@@ -1,4 +1,6 @@
 ﻿using AutomationPractice.Helpers;
+using AutomationPractice.Pages;
+using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
 
@@ -13,10 +15,12 @@ namespace AutomationPractice.Steps
             ScenarioContext.Current.Pending();
         }
         
-        [Given(@"user submits the search")]
+        [StepDefinition(@"user submits the search")]
         public void GivenUserSubmitsTheSearch()
         {
-            ScenarioContext.Current.Pending();
+            Utilities ut = new Utilities(Driver);
+           // HomePage hp = new HomePage(Driver);
+         //   ut.ClickOnElement(hp.searchBtn);
         }
         
         [Given(@"opens first product from the list")]
@@ -47,15 +51,17 @@ namespace AutomationPractice.Steps
         public void GivenUserEntersASearchTerm(string term)
         {
             Utilities ut = new Utilities(Driver);
-            //HomePage hp = new HomePage(Driver);
-          //  ut.EnterTextElement(hp.searchFld, term);
+            //HomePage hp = new Homepage(Driver);
+           // ut.EnterTextElement(hp.searchFld, term);
         }
 
        
         [Then(@"results for a '(.*)' term are displayed")]
-        public void ThenResultsForATermAreDisplayed(string p0)
+        public void ThenResultsForATermAreDisplayed(string term)
         {
-            ScenarioContext.Current.Pending();
+            Utilities ut = new Utilities(Driver);
+            SearchPage srp = new SearchPage(Driver);
+            Assert.That(ut.ReturnTextFromElement(srp.searchTerm), Does.Contain(term), "Search results for the required term are not displayed");
         }
 
     }

@@ -21,5 +21,10 @@ namespace AutomationPractice.Helpers
         public const string State = "New York";
         public const string Mobile = "+12345678910";
         public const string Alias = "ad1";
+
+
+
+        //search data
+        public const string SearchTerm = "";
     }
 }
